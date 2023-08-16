@@ -10,9 +10,7 @@ if(isset($_POST['btn-submit'])){
 
 /*
 $sql="Select nome,email,telefone from cadastro where nome='$nome' and email='$email'
-and telefone='$telefone'";
-
-*/
+and telefone='$telefone'";*/
 
 $sql="SELECT email from cadastro where email='$email'";
 
