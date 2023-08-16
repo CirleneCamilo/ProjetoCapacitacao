@@ -16,38 +16,49 @@
  </head>
     <body>
         <header id="event-description">
-        <div id="empresa">
-        <form action="cadastro.php" method="POST">
-        <h1>CALEANA FLORES</h1>
-        <p class="event">
-        Evento Online e Gratuito - Irá revolucionar sua criatividade</p><br>
-        <p>Data do Evento:</p>
-        <p class="event-date">Sexta, 29 de Setembro, a partir das 20h00</p>
-        </div>
-        <div id="subscription-form">
-        <p>Preencha esse formulário para receber informações sobre o grande Evento Gratuito</p>
-        <form id="form">
+            <div id="empresa">
+                <h1>CALEANA FLORES</h1>
+                <p class="event">
+                Evento Online e Gratuito - Irá revolucionar sua criatividade</p><br>
+                <p>Data do Evento:</p>
+                </p class="event-date">Sexta, 29 de Setembro, a partir das 20h00</p>
+            </div>
+            <div id="subscription-form">
+                <p>Preencha esse formulário para receber informações sobre o grande Evento Gratuito</p>
+        
+            <form id="form1" action="cadastro.php" method="POST">
+
                 <div class="form-group">
-                <label for="username">Nome</label> 
-                <input type="text" id="username" placeholder="Digite seu nome" required maxlength="30" minlength="10">
-                
+                    <label for="name">Nome</label> 
+                    <input 
+                    type="text" 
+                    name="name"
+                    placeholder="Digite seu nome" 
+                    required maxlength="30" 
+                    minlength="12">
                 </div>
                 <div class="form-group">
-                <label for="email">E-mail</label>
-                <input type="email" id="email" placeholder="Digite seu e-mail" required maxlength="50">
-                
+                    <label for="email">E-mail</label>
+                    <input 
+                    type="email" 
+                    id="email" 
+                    placeholder="Digite seu e-mail" 
+                    required maxlength="50">
                 </div>
                 <div class="form-group">
-                <label for="phone">Telefone</label>
-                <input type="text" id="phone" placeholder="Número de Whatsapp" required maxlength="11"> 
-                
+                    <label for="telefone">Telefone</label>
+                    <input 
+                    type="text" 
+                    id="phone" 
+                    placeholder="Número de Whatsapp" 
+                    required maxlength="11"> 
                 </div>
-                <input type="submit" class="btn"/>
-                </form>
+                <input type="submit" name="btn-submit" class="btn"/>
             </form>
+            
             </div>
         </header>
-        <script src="./script.js"></script>
+        <script src="script.js"></script>
     </body>
 </html>
 

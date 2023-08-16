@@ -1,19 +1,38 @@
 <?php
 include("conexao.php");
 
-$nome=$_POST['nome'];
-$email=$_POST['email'];
-$phone=$_POST['phone'];
+if(isset($_POST['btn-submit'])){
 
-$sql="INSERT INTO cadastro(nome, email, phone) Values ('$nome', '$email', '$phone')";
+    $nome=$_POST['nome'];
+    $email=$_POST['email'];
+    $phone=$_POST['telefone'];
 
-if(mysqli_query($conexao,$sql)){
-    echo "Usuário cadastrado com sucesso";
+
+/*
+$sql="Select nome,email,telefone from cadastro where nome='$nome' and email='$email'
+and telefone='$telefone'";
+
+*/
+
+$sql="SELECT email from cadastro where email='$email'";
+
+$rs=$mysqli->query($sql);
+
+if(mysqli_num_rows($rs)>0){
+    $_SESSION['cadastrado']='Usuário já Cadastrado';
+
+    header('Location:cadastro.html');
+    echo "<br>Usuário já está Cadastrado!";
 }
 
 else{
-    echo "Erro".mysqli_connect_error($conexao);
+    $sql = "INSERT INTO cadastro(nome, email, telefone) Values ('$nome', '$email', '$telefone')";
+    $mysqli->query($sql);
+    
+    header('Location:cadastro.html');
+    echo "<br>Usuário cadastrado com sucesso!";
 }
-mysqli_close($conexao);
+$mysqli->close();
+}
 
 ?>

@@ -1,14 +1,21 @@
 <?php
-$servidor="localhost";
+$hostname="localhost";
 $bancodedados="projetocap";
 $usuario="root";
 $senha="";
 
-$conexao = mysqli_connect($servidor, $bancodedados , $usuario, $senha);
-if (!$conexao)
-{
-    echo ("Falha ao conectar ! :" .$mysqli_connect_errno());
+//Criar conexão
+
+$mysqli=new $mysqli($hostname, $bancodedados , $usuario, $senha);
+
+//Verificar conexão
+
+if ($mysqli->conecct_errno){
+
+    echo "Falha ao conectar ! :(" .$mysqli->connect_errno.")" .$mysqli->connect_errno;
 }
-else
+
+else{
     echo "Conectado ao Bando de Dados";
+}
 ?>
